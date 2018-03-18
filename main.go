@@ -22,7 +22,7 @@ var (
 
 func init() {
   flag.StringVar(&token, "t", "", "Bot `token` (required)")
-  flag.StringVar(&ownerID, "o", "", "Owner user `id`")
+  flag.StringVar(&ownerID, "o", "", "Owner user `id` (only this owner ID and server owner can use the register command)")
   flag.StringVar(&activeChannel, "c", "roles", "Channel `name` to use")
   flag.StringVar(&emoji, "e", "🍆", "Emoji to use as reaction button")
   flag.BoolVar(&verbose, "v", false, "Verbose logging")
