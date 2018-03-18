@@ -146,13 +146,21 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
       debug("register command only works in channels with name: ", activeChannel)
       return
     }
-    getRole := regexp.MustCompile(`<@&([0-9]+)>.*\((.*)\)`)
+    getRole := regexp.MustCompile(`<@&([0-9]+)>(?:.*\((.*)\))?`)
     regexout := getRole.FindAllStringSubmatch(m.Content, -1)
-    if regexout != nil && regexout[0][2] != "" {
+    if regexout != nil {
       roleID := regexout[0][1]
-      description := regexout[0][2]
-      log.Print("registering ", roleID, ": ", description)
-      text := []string{"<@&", roleID, ">\n", description}
+      description := ""
+      text := []string{}
+      if regexout[0][2] != "" {
+        description = regexout[0][2]
+        log.Print("registering ", roleID, ": ", description)
+        text = []string{"<@&", roleID, ">\n", description}
+      } else {
+        log.Print("registering ", roleID, ": ", description)
+        text = []string{"<@&", roleID, ">\n", description}
+      }
+
       newm, err := s.ChannelMessageSend(m.ChannelID, strings.Join(text, ""))
       if err == nil {
         s.MessageReactionAdd(newm.ChannelID, newm.ID, emoji)
