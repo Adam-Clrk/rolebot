@@ -90,6 +90,9 @@ func reactionUpdate(s *discordgo.Session, MessageID *string, ChannelID *string) 
     return false, "", ""
   }
   message, _ := s.ChannelMessage(*ChannelID, *MessageID)
+  if message.Author.ID != s.State.User.ID {
+    return false, "", ""
+  }
 
   getRole := regexp.MustCompile(`<@&([0-9]+)>`)
   roleID := getRole.FindStringSubmatch(message.Content)[1]
