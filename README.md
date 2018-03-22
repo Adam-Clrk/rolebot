@@ -1,5 +1,5 @@
 # Discord Rolebot
-A discord bot written in [Go](https://golang.org/). Assign a role to a user when they add a reaction to a message.
+A simple discord bot written in [Go](https://golang.org/). It assigns a role to a user when they add a reaction to a specific message.
 
 <img src="screenshots/1.jpg" width="300"> <img src="screenshots/2.jpg" width="300">
 
@@ -9,7 +9,7 @@ A discord bot written in [Go](https://golang.org/). Assign a role to a user when
 go get github.com/Adam-Clrk/rolebot
 go install github.com/Adam-Clrk/rolebot
 ```
-(Installs to `~/go/bin/` by default)
+(Installs to `~/go/bin/`)
 
 ## Running
 You will need a bot token from the [Discord developers site](https://discordapp.com/developers/applications/me)
@@ -40,7 +40,7 @@ rolebot -t YOURTOKENHERE
 2018/03/18 18:09:18 https://discordapp.com/api/oauth2/authorize?scope=bot&permissions=268446720&client_id=(removed)
 2018/03/18 18:09:18 Bot running as (removed). CTRL-C to exit.
 ```
-paste the link into a web browser to add the bot to your discord server (NOTE: you will need the Manage Server permission)
+paste the link into a web browser to add the bot to your discord server (you will need the Manage Server permission)
 
 ## Command Usage
 

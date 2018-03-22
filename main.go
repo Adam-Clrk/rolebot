@@ -1,3 +1,4 @@
+// Discordrole is a simple discord bot written in Go. It assigns a role to a user when they add a reaction to a specific message.
 package main
 
 import (
