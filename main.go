@@ -14,10 +14,10 @@ import (
 
 var (
   token string
-  ownerID string = "0"
-  activeChannel string = "roles"
-  verbose bool = false
-  emoji string = "🍆"
+  ownerID = "0"
+  activeChannel = "roles"
+  verbose = false
+  emoji = "🍆"
 )
 
 func init() {
