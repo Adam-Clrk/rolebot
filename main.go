@@ -84,7 +84,7 @@ func main()  {
   discord.Close()
 }
 
-func getIDsfromMsg(s *discordgo.Session, MessageID *string, ChannelID *string) (bool, string, string)  {
+func reactionUpdate(s *discordgo.Session, MessageID *string, ChannelID *string) (bool, string, string)  {
   channel, _ := s.Channel(*ChannelID)
   if channel.Name != "roles" {
     return false, "", ""
@@ -98,7 +98,7 @@ func getIDsfromMsg(s *discordgo.Session, MessageID *string, ChannelID *string) (
 }
 
 func messageReactionAdd(s *discordgo.Session, r *discordgo.MessageReactionAdd)  {
-  shouldRun, GuildID, roleID := getIDsfromMsg(s, &r.MessageID, &r.ChannelID)
+  shouldRun, GuildID, roleID := reactionUpdate(s, &r.MessageID, &r.ChannelID)
   if !shouldRun || r.UserID == s.State.User.ID {
     return
   }
@@ -111,7 +111,7 @@ func messageReactionAdd(s *discordgo.Session, r *discordgo.MessageReactionAdd)  
 }
 
 func messageReactionRemove(s *discordgo.Session, r *discordgo.MessageReactionRemove)  {
-  shouldRun, GuildID, roleID := getIDsfromMsg(s, &r.MessageID, &r.ChannelID)
+  shouldRun, GuildID, roleID := reactionUpdate(s, &r.MessageID, &r.ChannelID)
   if !shouldRun || r.UserID == s.State.User.ID {
     return
   }
