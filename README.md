@@ -1,4 +1,3 @@
-# Discord Rolebot
 A simple discord bot written in [Go](https://golang.org/). It assigns a role to a user when they add a reaction to a specific message.
 
 <img src="screenshots/1.jpg" width="300"> <img src="screenshots/2.jpg" width="300">
