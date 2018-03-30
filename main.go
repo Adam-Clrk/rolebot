@@ -150,7 +150,7 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
       debug("register command only works in channels with name: ", activeChannel)
       return
     }
-    getRole := regexp.MustCompile(`<@&([0-9]+)> (.*)?`)
+    getRole := regexp.MustCompile(`<@&([0-9]+)> ?(.*)?`)
     regexout := getRole.FindAllStringSubmatch(m.Content, -1)
     if regexout != nil {
       roleID := regexout[0][1]
