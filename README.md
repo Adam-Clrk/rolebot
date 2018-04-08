@@ -4,7 +4,7 @@ A simple discord bot written in [Go](https://golang.org/). It assigns a role to 
 
 ## Install
 
-### Option 1: From source (requires go installation)
+### Option 1: From latest source (requires go installation)
 [Install Go](https://golang.org/doc/install#install)
 ```sh
 go get github.com/Adam-Clrk/rolebot
@@ -12,7 +12,7 @@ go install github.com/Adam-Clrk/rolebot
 ```
 (Installs to `~/go/bin/`)
 
-### Option 2: Downloading binary (easier - go installation not required)
+### Option 2: Download binary (easier - go installation not required)
 ```sh
 wget "https://github.com/Adam-Clrk/rolebot/releases/download/v1.0/rolebot"
 chmod +x rolebot
